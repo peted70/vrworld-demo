@@ -1,27 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using HoloToolkit.Unity;
+using HoloToolkit.Unity.InputModule;
+using HoloToolkit.Unity.SpatialMapping;
 using UnityEngine;
 
-public class RabbitScript : MonoBehaviour
+public class RabbitScript : MonoBehaviour, IFocusable
 {
+    private bool _dropped;
+
+    public void OnFocusEnter()
+    {
+        if (!_dropped)
+            return;
+        gameObject.GetComponent<Animation>().Play();
+    }
+
+    public void OnFocusExit()
+    {
+        if (!_dropped)
+            return;
+        gameObject.GetComponent<Animation>().Stop();
+    }
     public void OnDrop()
     {
         // Remove the RigidBody component from the rabbit
         var rabbit = GameObject.Find("Rabbit");
-        var rb = rabbit.GetComponent<Rigidbody>();
-        if (rb != null)
-            Destroy(rb);
 
+        Destroy(rabbit.GetComponent<FixedAngularSize>());
+        Destroy(rabbit.GetComponent<BoxCollider>());
+        Destroy(rabbit.GetComponent<Tagalong>());
+
+        rabbit.AddComponent<Rigidbody>().freezeRotation = true;
         rabbit.GetComponent<AudioSource>().Play();
-        rabbit.AddComponent<RabbitDance>();
-    }
 
-    public void OnMove()
-    {
-        var rabbit = GameObject.Find("Rabbit");
-        
-        var randomAngle = Random.Range(-45, 45);
-        gameObject.transform.localRotation =
-            Quaternion.Euler(0, randomAngle, 0);
+        SpatialMappingManager.Instance.DrawVisualMeshes = false;
+        _dropped = true;
     }
 }

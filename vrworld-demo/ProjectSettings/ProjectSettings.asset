@@ -506,11 +506,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: vrworld-demo
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00996a71e8ead301
   metroApplicationDescription: vrworld-demo
   wsaImages: {}
   metroTileShortName: 

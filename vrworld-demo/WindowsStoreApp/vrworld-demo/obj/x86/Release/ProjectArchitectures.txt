@@ -1,0 +1,4 @@
+C:\Users\pdaukin\Documents\Github\vrworld-demo\vrworld-demo\WindowsStoreApp\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj;x86
+C:\Users\pdaukin\Documents\Github\vrworld-demo\vrworld-demo\WindowsStoreApp\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
+C:\Users\pdaukin\Documents\Github\vrworld-demo\vrworld-demo\WindowsStoreApp\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj;x86
+C:\Users\pdaukin\Documents\Github\vrworld-demo\vrworld-demo\WindowsStoreApp\vrworld-demo\vrworld-demo.csproj;x86
